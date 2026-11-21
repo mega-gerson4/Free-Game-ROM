@@ -1,0 +1,81 @@
+{
+  "archive_name": "Trun Game Free Mega 1.0(1).zip",
+  "archive_sha256": "f311dae8e157e2c1f1d5f9b3b374e6e9fcf5ff6420e8a5102de5f20be2559e49",
+  "archive_size_bytes": 14857,
+  "file_count": 12,
+  "uncompressed_bytes": 37385,
+  "files": [
+    {
+      "name": "Abrir Launcher.vbs",
+      "size_bytes": 397,
+      "sha256": "f469a10e7c677aace74a8654c9af80ad8f948251edcd417ac0d40ec4b267be95",
+      "included_in_launcher": true
+    },
+    {
+      "name": "Abrir-sem-janela-preta.vbs",
+      "size_bytes": 357,
+      "sha256": "edd6c5f111118d486960b53f92f8912d6a5491d79381981eb4b5b2cf22c0fefb",
+      "included_in_launcher": true
+    },
+    {
+      "name": "appearance.json",
+      "size_bytes": 151,
+      "sha256": "f68b22189378b902587062f5b6f204ba726bff2ccfccd279bd2234ea6f9148ec",
+      "included_in_launcher": true
+    },
+    {
+      "name": "Installer Links.bat",
+      "size_bytes": 826,
+      "sha256": "8ccd10dc8fe024ab7de2e5be0f7ede2bd50d74ab8a1817683288994efa020a9a",
+      "included_in_launcher": true
+    },
+    {
+      "name": "Installer Links.ps1",
+      "size_bytes": 4427,
+      "sha256": "cf5d76928829a1dc8bb3dc6c45cec94f21de83eba5d5d630367bb173a7b07ac1",
+      "included_in_launcher": true
+    },
+    {
+      "name": "Launcher Links.ps1",
+      "size_bytes": 7077,
+      "sha256": "95cd6db3973b9d13927492796de5e5297b4874e43b8c7365f73c5d3b1799602f",
+      "included_in_launcher": true
+    },
+    {
+      "name": "MEGA-Logo.ico",
+      "size_bytes": 4286,
+      "sha256": "ecf410a6df99cad9173233ba6a06d9b8844a463e6b3af3276007e089455fb80f",
+      "included_in_launcher": true
+    },
+    {
+      "name": "Trun Game Free Mega 1.0.lnk",
+      "size_bytes": 2183,
+      "sha256": "6382167c230d8d05e5ec597af186d2c95d5df277f0f6dcbd516d28406c94f763",
+      "included_in_launcher": false
+    },
+    {
+      "name": "Trun Game Free Mega Beta – Unused.txt",
+      "size_bytes": 409,
+      "sha256": "59aff718e8cca106ec4c11a0f61ca9fb008cd5c534003d10805d23b95f93618d",
+      "included_in_launcher": true
+    },
+    {
+      "name": "Trun Game Mega Original – Free Edition 1.0.txt",
+      "size_bytes": 1871,
+      "sha256": "38b76660e757dc0c7103864a004fc46644155b89853a6e573e821dfd44b88c92",
+      "included_in_launcher": true
+    },
+    {
+      "name": "Trun-Game-Free-Mega.bat",
+      "size_bytes": 359,
+      "sha256": "6c3a016b5028815e0730d70b10f29cb8e05087eae570b0b54da92f2141cbf28b",
+      "included_in_launcher": true
+    },
+    {
+      "name": "Trun-Game-Free-Mega.ps1",
+      "size_bytes": 15042,
+      "sha256": "a4defc7b67518a90f6054caba46bec08f5101fb948ec803bd6342cbfc74085c9",
+      "included_in_launcher": true
+    }
+  ]
+}
