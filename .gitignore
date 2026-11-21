@@ -1,0 +1,9 @@
+# Atalhos e configuração gerados para cada computador
+*.lnk
+config.json
+
+# Saídas e logs locais
+dist/
+*.log
+Thumbs.db
+Desktop.ini
