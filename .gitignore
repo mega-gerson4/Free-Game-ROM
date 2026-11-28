@@ -7,3 +7,13 @@ dist/
 *.log
 Thumbs.db
 Desktop.ini
+
+# Saídas geradas pela versão 2.2
+Trun Game Free Mega.desktop
+Trun Game Free Mega.app/
+Trun Game Free Mega.app.previous/
+DataSense/
+App/
+_stage_*/
+_previous_app/
+smoke.tcl

@@ -1,16 +1,17 @@
-# Publicação no GitHub
+# Publicação da versão 2.2
 
-Nome preparado para o repositório: **Free-Game-ROM**.
+Repositório: **mega-gerson4/Free-Game-ROM**. Versão: **Trun Game Free Mega 2.2 — Native Red Edition**.
 
-1. Crie o repositório na sua conta GitHub.
-2. Envie o conteúdo desta pasta para a raiz, mantendo `README.md`, `assets`, `docs` e `launcher` nos lugares indicados. Não envie somente o ZIP fechado como código-fonte do repositório.
-3. No campo **About**, use a descrição de `docs/DESCRICAO.txt`.
-4. Abra **Releases** e escolha **Draft a new release**.
-5. Crie a tag `v1.0`, use o título **Trun Game Free Mega 1.0** e copie o texto de `docs/RELEASE-1.0.md` para a descrição.
-6. Anexe **Trun-Game-Free-Mega-1.0.zip** e **SHA256SUMS.txt**, fornecidos junto com este repositório. Publique a release depois de conferir os anexos.
+Use a tag **v2.2**, o título **Trun Game Free Mega 2.2** e as notas de [RELEASE-2.2.md](RELEASE-2.2.md).
 
-O ZIP do aplicativo coloca os 11 arquivos necessários juntos, dentro de `Trun Game Free Mega 1.0`, mais um guia de instalação. O `.lnk` será gerado no computador de cada pessoa pelo instalador.
+| Asset da release | Conteúdo |
+| --- | --- |
+| `Trun-Game-Free-Mega-2.2.zip` | Os 27 arquivos do aplicativo dentro de `Trun Game Free Mega 2.2`. |
+| `Trun-Game-Free-Mega-2.2.rar` | O RAR original, com nome simplificado para distribuição. |
+| `SHA256SUMS.txt` | Hashes SHA-256 dos dois pacotes. |
 
-A tag 2.0 só deve acompanhar os arquivos dessa versão quando ela estiver pronta. O material recebido e documentado aqui é o pacote 1.0, com identificação interna 1.1 no componente de atalhos.
+As duas formas de distribuição contêm os mesmos arquivos de aplicação. O ZIP automático de código-fonte do GitHub também inclui a documentação do repositório.
 
-Referência: [GitHub — gerenciar releases](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository).
+Mantenha a tag e a release `v1.0` para consulta histórica. Os instaladores atuais ficam na raiz, separados por sistema; `Installer Links.bat` pertence à versão 1.0.
+
+O workflow `build-native.yml` define verificações para Windows, Linux e macOS. Confira os resultados da execução correspondente antes de afirmar que os testes passaram. Uma configuração de workflow não comprova execução ou aprovação.

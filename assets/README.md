@@ -1,5 +1,10 @@
-# Logo MEGA
+# Logos da versão 2.2
 
-`MEGA-Logo.png` é uma conversão do ícone original de 32 × 32 pixels fornecido no pacote, sem redesenho. O ícone usado pelo instalador está em [launcher/MEGA-Logo.ico](../launcher/MEGA-Logo.ico).
+| Arquivo | Uso |
+| --- | --- |
+| `MEGA-Logo.png` | Nova imagem principal: chapéu vermelho com faixa preta, 1254 × 1254 pixels. Idêntica à imagem enviada separadamente pelo criador. |
+| `MEGA-Logo.ico` | Ícone principal de 256 × 256 pixels, usado pelo instalador Windows. |
+| `MEGA-Logo-2.png` | Variante fornecida, 1254 × 1254 pixels. |
+| `MEGA-Logo-2.ico` | Ícone da variante, 256 × 256 pixels. |
 
-A imagem PNG é usada no README principal do repositório.
+Os quatro arquivos foram preservados byte a byte. A logo principal é usada no README e pelas três interfaces.

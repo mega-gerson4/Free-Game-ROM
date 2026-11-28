@@ -1,24 +1,23 @@
 # Histórico
 
-## 2.0 — em breve
+## 2.2 — Native Red Edition
 
-Versão anunciada pelo criador. Data, recursos e arquivos ainda não foram fornecidos.
+- Repositório e documentação atualizados para o pacote 2.2 recebido em 28/11/2026.
+- Nova logo do chapéu vermelho com faixa preta, em PNG e ICO.
+- 40 links em seis categorias: Nintendo, Sony, Microsoft, Sega, Capcom e Commodore.
+- Interfaces Windows Forms, Tcl/Tk e SwiftUI para Windows, Linux e macOS.
+- Busca, filtros, copiar/abrir, seleção de idioma e histórico local DataSense.
+- Instaladores e reparadores próprios; atalho Windows na pasta do projeto e auxiliares ocultos.
+- BUILD SUCCESS/FATAL ERROR com detalhes em Read More.
+- Arquivos da aplicação preservados; documentos, inventário, créditos e validação atualizados.
 
-## Pacote 1.0 — conteúdo recebido
+A numeração atual é **2.2**. O aviso anterior de “2.0 em breve” foi substituído pelas informações do pacote recebido. Não foram fornecidos pacotes independentes 2.0 ou 2.1 para documentar alterações intermediárias.
 
-- Catálogo com 19 entradas de links divididas entre Nintendo, Sony e Microsoft.
-- Interface para copiar links e consultar a confirmação da última cópia.
-- Aparência configurável em `appearance.json`.
-- Instalador que cria atalhos para o usuário atual.
-- Inicializador com reparo de caminho após mover a pasta.
-- Logo, lista original, lista beta e 16 créditos.
+## 1.0
 
-O arquivo recebido se chama `Trun Game Free Mega 1.0(1).zip`. O instalador e o reparador gravam `Version='1.1'` no arquivo local de configuração. Essa identificação interna não foi alterada e não representa a versão 2.0.
+- 19 links em três grupos, interface Windows para copiar endereços e aparência configurável por JSON.
+- Instalador de atalhos, reparador de caminhos, logo anterior e os mesmos 16 créditos.
+- Componente de atalhos com identificação interna 1.1.
+- O atalho pronto do computador de origem foi retirado da distribuição daquela release.
 
-## Preparação deste repositório
-
-- Documentação de instalação, uso, arquivos, limites da revisão e suporte.
-- Créditos originais preservados.
-- Logo original convertida para PNG para exibição no README.
-- Scripts, listas de texto, JSON e ícone preservados byte a byte.
-- Atalho `.lnk` pronto excluído da cópia para distribuição porque contém caminhos do computador de origem. O instalador continua responsável por gerá-lo em cada computador.
+A release e a tag `v1.0` permanecem disponíveis no histórico.

@@ -1,134 +1,110 @@
 <p align="center">
-  <img src="assets/MEGA-Logo.png" alt="Logo MEGA" width="64" height="64">
+  <img src="assets/MEGA-Logo.png" alt="Nova logo MEGA: chapéu vermelho com faixa preta" width="160" height="160">
 </p>
 
-# Free Game ROM
+# Free Game ROM — Trun Game Free Mega 2.2
 
-Repositório do **Trun Game Free Mega**, um catálogo para Windows que reúne links de páginas de jogos por plataforma: Nintendo, Sony/PlayStation e Microsoft/Xbox.
+**Native Red Edition.** Catálogo com **40 links**, nova logo e interfaces para **Windows, Linux e macOS**. Encontre uma plataforma pela busca, filtre por categoria e consulte seu histórico local de cópias.
 
-O pacote 1.0 contém **19 entradas de links**, uma interface, instalador de atalhos, arquivos de texto e a logo. Os jogos e ROMs não estão incluídos no ZIP. Ao clicar em uma entrada, o programa copia o endereço para a área de transferência; você escolhe se deseja acessá-lo no navegador.
+**[Baixar a versão 2.2](https://github.com/mega-gerson4/Free-Game-ROM/releases/tag/v2.2)** · [Histórico](CHANGELOG.md) · [Créditos](CREDITS.md)
 
-**Versão do pacote:** 1.0 · **Próxima versão:** 2.0, em breve, sem data confirmada.
+O pacote contém o aplicativo, seus instaladores e endereços de sites externos. Jogos e ROMs não estão incluídos.
+
+## Novidades da versão 2.2
+
+- Nova logo do chapéu vermelho com faixa preta e visual Native Red Edition.
+- Catálogo ampliado de 19 para 40 entradas, em seis categorias.
+- Busca por nome, categoria ou endereço; filtros na barra lateral.
+- Botões **COPIAR** e **ABRIR** em cada entrada.
+- **DataSense:** histórico de links copiados e preferência de idioma salvos localmente.
+- Instaladores e reparadores próprios para Windows, Linux e macOS.
+- Janelas **BUILD SUCCESS**, **BUILD FATAL ERROR** e detalhes em **Read More**.
+- Atalho Windows dentro da pasta extraída e arquivos auxiliares ocultos após instalar.
 
 ## Download e instalação
 
-1. Abra a seção **Releases** deste repositório e escolha a versão disponível.
-2. Em **Assets**, baixe o arquivo `Trun-Game-Free-Mega-1.0.zip` anexado à release.
-3. Extraia todo o ZIP para uma pasta em que deseja manter o programa.
-4. Abra a pasta extraída e dê dois cliques em **`Installer Links.bat`**. Se o Windows esconder extensões, o nome pode aparecer apenas como **Installer Links**.
-5. Aguarde a mensagem de conclusão e pressione uma tecla para fechar o instalador.
-6. Abra o atalho **Trun Game Free Mega** na área de trabalho ou **Trun Game Free Mega 1.0** na pasta do programa.
+Abra a [release 2.2](https://github.com/mega-gerson4/Free-Game-ROM/releases/tag/v2.2), baixe **Trun-Game-Free-Mega-2.2.zip** em **Assets** e extraia o pacote inteiro. O RAR original também está disponível. O arquivo **SHA256SUMS.txt** identifica os dois pacotes publicados.
 
-O instalador foi escrito para funcionar com as permissões do usuário atual. Ele cria os atalhos e uma pequena pasta de inicialização em `%LOCALAPPDATA%\TrunGameFreeMega`. A pasta extraída continua sendo necessária para abrir o catálogo.
+| Sistema | Instalar após extrair | Abrir depois da instalação |
+| --- | --- | --- |
+| Windows 10/11 | Dê dois cliques em **Installer Windows.bat**. | **Trun Game Free Mega.lnk**, na mesma pasta extraída. |
+| Linux | Com Tcl/Tk (`wish`) disponível, execute `sh "Installer Linux.sh"`. | **Trun Game Free Mega.desktop**, na pasta extraída ou no menu de aplicativos. |
+| macOS | Com as ferramentas Swift da Apple disponíveis, execute **Installer macOS.command**. | **Trun Game Free Mega.app**, compilado na mesma pasta. |
 
-Depois da instalação, quatro arquivos recebem o atributo **Oculto**: `Installer Links.bat`, `Installer Links.ps1`, `Launcher Links.ps1` e `Abrir Launcher.vbs`. Eles continuam na pasta e podem ser visualizados pela opção **Itens ocultos** do Explorador de Arquivos.
+No Windows, aguarde a mensagem de resultado. A aplicação é copiada para `%LOCALAPPDATA%/TrunGameFreeMega/App`, e o instalador gera um atalho específico para o computador. Não cria um novo atalho na área de trabalho. Um atalho antigo só é removido quando identificado como pertencente ao projeto.
 
-Se a seção Releases ainda estiver vazia, o pacote ainda não foi publicado ali. O ZIP de código-fonte gerado pelo GitHub possui outra estrutura: nesse caso, os arquivos do aplicativo ficam dentro de **`launcher`**, e é nessa pasta que está o instalador.
+No Linux, o aplicativo fica em `~/.local/share/TrunGameFreeMega/App`. É necessário um ambiente gráfico e Tcl/Tk. O botão **ABRIR** utiliza `xdg-open`.
+
+No macOS, este pacote contém **código-fonte SwiftUI**: é necessário compilar em um Mac. A release de código-fonte não é um aplicativo previamente compilado e notarizado.
+
+## Arquivos ocultos e reparação
+
+Após instalar no Windows, os instaladores, catálogos e pastas auxiliares recebem o atributo **Oculto**. O atalho de abertura permanece visível. Para acessar novamente os auxiliares, ative **Itens ocultos** no Explorador de Arquivos.
+
+No Linux, a lista `.hidden` é aplicada por gerenciadores de arquivos compatíveis. No macOS, o instalador oculta os auxiliares no Finder. A exibição varia conforme o sistema e o gerenciador de arquivos.
+
+Para repetir a instalação ou recriar o inicializador, use **Repair Windows.bat**, **Repair Linux.sh** ou **Repair macOS.command**. Os reparadores foram escritos para preservar DataSense. No Windows e Linux, o inicializador aponta para a cópia instalada na pasta do usuário; mover a pasta baixada não altera esse destino.
 
 ## Como usar
 
-- Clique em uma entrada para **copiar o link**.
-- Cole o endereço no navegador com **Ctrl+V** para acessá-lo.
-- A interface mostra uma confirmação e tenta exibir uma notificação do Windows. A opção **View last notification** permite consultar a última cópia.
-- Arraste o cabeçalho para mover a janela.
-- A tecla **Enter** foi desativada na interface. Para fechar a janela principal, use **Alt+F4**.
+1. Escolha **Todos** ou uma categoria na barra lateral.
+2. Digite na busca para filtrar nomes, categorias ou endereços.
+3. Clique em **COPIAR** para colocar o endereço na área de transferência e registrar a cópia no histórico local.
+4. Clique em **ABRIR** para enviar o endereço ao navegador padrão.
+5. Use **HISTÓRICO** para consultar as cópias e **CRIADORES** para os créditos.
 
-Os sites externos têm funcionamento e conteúdo próprios. A presença de um endereço no catálogo não confirma disponibilidade, segurança ou compatibilidade dos arquivos oferecidos por esse site.
+O seletor oferece Auto, inglês, português, espanhol, francês, alemão e japonês. A tradução varia entre as interfaces: no Windows/Linux, vários textos da opção japonesa ainda usam inglês.
 
-## Plataformas listadas
+## Categorias do catálogo
 
-| Grupo do catálogo | Entradas | Quantidade |
-| --- | --- | ---: |
-| Nintendo | Nintendo Switch 1 and 2; Nintendo 64; GameCube; Game Boy Color; Game Boy; Game Boy Advance; Nintendo DS; Pokemon Mini; Nintendo 3DS; NES | 10 |
-| Sony / PlayStation | PS4; PS2; PS1 | 3 |
-| Microsoft | Xbox 360; Windows; Windows 3.x; MSX; MSX 2; Classic Xbox | 6 |
-| **Total** | **Entradas de links, não quantidade de jogos** | **19** |
+| Categoria | Entradas |
+| --- | ---: |
+| Nintendo | 16 |
+| Sony / PlayStation | 6 |
+| Microsoft / Xbox / PC | 7 |
+| Sega | 7 |
+| Capcom | 2 |
+| Commodore | 2 |
+| **Total** | **40** |
 
-Os nomes acima reproduzem as categorias do código original. A entrada “Nintendo Switch 1 and 2” contém um único endereço; esse rótulo não comprova suporte a jogos de Switch 2. As plataformas listadas são categorias de sites e não sistemas em que este aplicativo executa jogos.
+Os nomes e endereços estão em [catalog.tsv](catalog.tsv). As categorias representam páginas externas; não comprovam compatibilidade de jogos com este aplicativo ou com um computador específico.
 
-## O que existe no código
+## Dados locais e diagnósticos
 
-| Componente | Função |
+| Sistema | Pasta DataSense |
 | --- | --- |
-| Batch (`.bat`) | Inicia os scripts de instalação e da interface. |
-| PowerShell (`.ps1`) | Cria os atalhos, grava o caminho da pasta, repara caminhos e monta a interface. |
-| VBScript (`.vbs`) | Abre os inicializadores sem deixar a janela de console visível. |
-| Windows Forms / System.Drawing | Desenha a interface, as notificações e as janelas de reparo. |
-| Pequeno trecho em C# | Trata a tecla Enter e permite arrastar a janela pelo cabeçalho. É compilado localmente por `Add-Type`. |
-| `appearance.json` | Define cores e tamanho inicial da janela. |
-| Textos e logo | Preservam as listas de links, os créditos e a identidade visual. |
+| Windows | `%LOCALAPPDATA%/TrunGameFreeMega/DataSense` |
+| Linux | `~/.local/share/TrunGameFreeMega/DataSense` |
+| macOS | `~/Library/Application Support/TrunGameFreeMega/DataSense` |
 
-Veja a função de cada arquivo em [docs/ARQUIVOS.md](docs/ARQUIVOS.md) e a avaliação técnica em [docs/REVISAO.md](docs/REVISAO.md).
+DataSense guarda o histórico de cópias, o idioma escolhido e registros de instalação/erro. Consultar o catálogo local não precisa de internet; baixar o pacote e visitar os sites externos precisa de conexão. Os scripts não baixam jogos nem dependências automaticamente.
 
-## Compatibilidade
+**BUILD SUCCESS** informa que as verificações daquela etapa passaram. **BUILD FATAL ERROR** indica falha; use **Read More** para os detalhes. No macOS, os detalhes do instalador são abertos no TextEdit.
 
-O código tem como alvo **Windows 10 e Windows 11**, com Windows PowerShell, Windows Forms, System.Drawing e Windows Script Host/VBScript disponíveis. O criador relata uso no próprio computador; esta revisão não executou o aplicativo em Windows.
+## Compatibilidade e validação
 
-| Item | Situação conhecida |
+O Windows usa PowerShell, Windows Forms/.NET Framework e Windows Script Host; o Linux usa Tcl/Tk; o macOS usa SwiftUI/AppKit. Não existe uma lista certificada de todas as CPUs e GPUs, nem tempos garantidos por computador ou rede.
+
+Nesta atualização foram conferidos os 40 registros, os 16 créditos, as imagens, a sintaxe dos cinco scripts de shell e a integridade dos pacotes. As interfaces nativas não foram executadas neste ambiente. O registro `TEST-RESULTS.txt` recebido no pacote relata verificações anteriores, distintas destas. Veja [docs/VALIDACAO-2.2.md](docs/VALIDACAO-2.2.md).
+
+Esta revisão não certifica segurança. Caso o sistema apresente avisos de fornecedor desconhecido ou proteção, confira a origem e os arquivos antes de decidir executar. O comportamento dos scripts e os limites da avaliação estão em [docs/REVISAO.md](docs/REVISAO.md).
+
+## Código e documentos
+
+| Caminho | Conteúdo |
 | --- | --- |
-| CPU | Não há uma lista de modelos Intel, AMD ou ARM testados, nem requisito mínimo medido. |
-| Placa de vídeo | O código não consulta modelos de GPU nem usa um motor de jogos. Placas integradas e dedicadas não receberam validação individual nesta revisão. |
-| RAM e armazenamento | Não há mínimos medidos. É necessário espaço para o pacote extraído e os arquivos locais criados pelo instalador. |
-| Internet | Necessária para baixar o ZIP e visitar os sites. Os scripts não fazem requisições de rede para criar atalhos ou copiar os links. |
-| Outros sistemas | Linux e macOS não têm inicializador nativo neste pacote. |
-| Jogos e emuladores | Possuem requisitos próprios, que não são definidos por este catálogo. |
+| `windows/` | Interface Windows Forms, instalador, inicializador e diálogos. |
+| `linux/` | Interface Tcl/Tk, inicializador e diálogos. |
+| `macos/` | Código-fonte da interface SwiftUI. |
+| `assets/` | Nova logo principal e variante, em PNG e ICO. |
+| `catalog.tsv` / `catalog-original.txt` | Catálogo estruturado e referência original. |
+| `credits.txt` / `CREDITS.md` | Os 16 créditos do projeto. |
+| `docs/` | Inventário, revisão, validação e notas das releases. |
 
-Não é possível afirmar suporte a qualquer computador ou atribuir uma falha à placa de vídeo apenas pelo comportamento observado.
+A [release 1.0](https://github.com/mega-gerson4/Free-Game-ROM/releases/tag/v1.0) e seu código na tag `v1.0` continuam disponíveis no histórico. As instruções atuais usam os novos instaladores da versão 2.2.
 
-## Quanto tempo pode demorar?
-
-O criador relatou uma execução de aproximadamente **50 segundos** e mencionou uma referência informal de **1 a 3 minutos**. Esses relatos não separam download, extração, instalação e abertura, e não são medições por configuração.
-
-| Etapa | O que pode influenciar |
-| --- | --- |
-| Download do ZIP | Velocidade da conexão, servidor e condições da rede. |
-| Extração do ZIP | Armazenamento, CPU e verificações de segurança do sistema. A extração é feita pelo usuário. |
-| Criação dos atalhos | Inicialização do PowerShell, disco, permissões e verificações do Windows. O instalador não baixa nem extrai arquivos. |
-| Primeira abertura | Inicialização do PowerShell, carregamento das bibliotecas e compilação local do pequeno trecho em C#. |
-| Acesso aos sites | Conexão e funcionamento de cada site externo. |
-
-| Condição da rede | Instalação e abertura após extrair o ZIP |
-| --- | --- |
-| Sem conexão | O código dessas etapas funciona localmente; o sistema ainda pode realizar verificações próprias de segurança. |
-| Wi-Fi lento | Não existe no programa uma espera de rede para gerar o atalho. |
-| Wi-Fi rápido ou cabo | Pode acelerar o download e a navegação; não determina o tempo dos scripts locais. |
-
-Não há dados suficientes para publicar minutos exatos por CPU, GPU ou velocidade de Wi-Fi.
-
-## Avisos do Windows
-
-Arquivos sem assinatura ou sem reputação estabelecida podem exibir **“Fornecedor desconhecido”** ou **“O Windows protegeu o computador”**. Esses avisos, sozinhos, não comprovam que o arquivo é malicioso nem que é seguro. Antes de decidir executar, confira a origem do download e os arquivos que serão iniciados. Mantenha as proteções do Windows ativas.
-
-Os inicializadores usam `-ExecutionPolicy Bypass` para a sessão de PowerShell que abrem e usam janelas de console ocultas. Isso deve ser considerado ao revisar o pacote. Não há nos scripts uma alteração permanente da política de execução do Windows, e políticas administrativas ainda podem impedir a execução.
-
-A avaliação foi uma **leitura estática dos arquivos**: não encontrou rotinas de download automático, coleta de credenciais ou inicialização automática com o Windows. Ela não equivale a uma certificação de segurança e não abrange os sites externos.
-
-Referências: [Microsoft — SmartScreen](https://learn.microsoft.com/en-us/windows/apps/package-and-deploy/smartscreen-reputation) e [Microsoft — políticas de execução do Windows PowerShell](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-5.1).
-
-## Problemas comuns
-
-| Problema | Como verificar |
-| --- | --- |
-| “Diretório não reconhecido” ou “Repository not found” | Abra o atalho, clique em **Reparar problema** e selecione a pasta que contém os arquivos principais. |
-| O atalho recebido antes da instalação não abre | Execute `Installer Links.bat` para gerar um atalho com os caminhos deste computador. O atalho pronto do ZIP original não foi incluído no novo pacote de distribuição. |
-| A janela não aparece ou fecha logo | Confira se extraiu todos os arquivos, incluindo `appearance.json`, e consulte o histórico de proteção do Windows para identificar bloqueios. |
-| O instalador desapareceu da pasta | Ative **Itens ocultos** no Explorador de Arquivos. Esse comportamento está previsto no instalador. |
-| A pasta foi movida | Use **Reparar problema** no atalho. Se necessário, execute novamente o instalador na pasta atual. |
-| Link copiado, mas nenhum site abriu | Esse é o comportamento previsto. Cole o link no navegador. |
-| Uma página externa deixou de funcionar | Informe a plataforma e o endereço afetado no contato abaixo. |
-
-Para remover o programa, feche a janela, remova os atalhos criados e, se não quiser mais usá-lo, exclua a pasta extraída e `%LOCALAPPDATA%\TrunGameFreeMega`.
-
-## Versão 2.0
-
-**Em breve.** A equipe anunciará os recursos, a data e os arquivos da versão 2.0 quando estiverem prontos. O pacote analisado nesta documentação é o 1.0; ele já contém um componente de atalhos que grava a identificação interna `1.1`.
-
-## Créditos e contato
+## Créditos e suporte
 
 **Ruros · MEGA GERSON · Gerson Speed Minecraft · Dash X · Game Fun Mega · Night Friends · Jan Jan Boy · BunJun Fun LKJ · JJNS · No Game · Yafek JKS · Makerzin · Animazin · Club OBC · Club 2017 Neus · Club Mega ++**
 
-A relação completa, na ordem original, está em [CREDITS.md](CREDITS.md).
-
-Problemas, sugestões e suporte: **[mega.gerson44888@gmail.com](mailto:mega.gerson44888@gmail.com)**. Informe a versão do Windows, a etapa em que ocorreu o erro e o texto da mensagem exibida.
-
-Obrigado por acompanhar e apoiar o projeto!
+Problemas e sugestões: **[mega.gerson44888@gmail.com](mailto:mega.gerson44888@gmail.com)**. Informe o sistema, a etapa e os detalhes mostrados em **Read More**.

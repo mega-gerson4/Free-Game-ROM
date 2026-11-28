@@ -1,45 +1,40 @@
-# Conteúdo do pacote
+# Arquivos — versão 2.2
 
-O ZIP original tem **12 arquivos**, **37.385 bytes descompactados** e **14.857 bytes compactados**. A entrada de diretório do ZIP não foi contada como arquivo.
+O RAR recebido contém **27 arquivos**, totalizando **2.558.522 bytes descompactados**. O arquivo original tem **1.974.878 bytes**. O ZIP da release reproduz esses 27 arquivos, sem atalhos de um computador específico já gerados.
 
-| Arquivo original | Tamanho | Função | Nova distribuição |
-| --- | ---: | --- | --- |
-| `Abrir Launcher.vbs` | 397 bytes | Abre `Launcher Links.ps1` em uma sessão PowerShell sem console visível. | Preservado |
-| `Abrir-sem-janela-preta.vbs` | 357 bytes | Abre o Batch da interface sem exibir o console. | Preservado |
-| `appearance.json` | 151 bytes | Cores e dimensões iniciais, 940 × 690 pixels. | Preservado |
-| `Installer Links.bat` | 826 bytes | Inicia o instalador PowerShell e mostra o resultado. | Preservado |
-| `Installer Links.ps1` | 4.427 bytes | Copia três arquivos para LocalAppData, grava configuração, gera atalhos e oculta quatro arquivos de origem. | Preservado |
-| `Launcher Links.ps1` | 7.077 bytes | Lê a configuração, abre a interface e oferece reparo de caminho. | Preservado |
-| `MEGA-Logo.ico` | 4.286 bytes | Ícone original de 32 × 32 pixels usado nos atalhos. | Preservado |
-| `Trun Game Free Mega 1.0.lnk` | 2.183 bytes | Atalho já criado no computador de origem. | Gerado pelo instalador; não redistribuído pronto |
-| `Trun Game Free Mega Beta – Unused.txt` | 409 bytes | Lista histórica beta com cinco links Nintendo. Não é carregada pela interface. | Preservado |
-| `Trun Game Mega Original – Free Edition 1.0.txt` | 1.871 bytes | Lista com 19 links e os 16 créditos. A interface mantém uma cópia desses dados no código. | Preservado |
-| `Trun-Game-Free-Mega.bat` | 359 bytes | Inicia o script PowerShell da interface. | Preservado |
-| `Trun-Game-Free-Mega.ps1` | 15.042 bytes | Interface Windows Forms, links, cópia para a área de transferência, notificações e créditos. | Preservado |
-
-## Organização do repositório
-
-| Caminho | Conteúdo |
+| Arquivo ou grupo | Função |
 | --- | --- |
-| `README.md` | Apresentação, instalação, uso, compatibilidade e suporte. |
-| `CREDITS.md` | Os 16 créditos originais. |
-| `CHANGELOG.md` | Conteúdo recebido e anúncio da versão 2.0. |
-| `launcher/` | Os 11 arquivos originais redistribuídos, juntos e sem alteração de conteúdo. |
-| `assets/MEGA-Logo.png` | Conversão da logo original para uso no README. |
-| `docs/ARQUIVOS.md` | Este inventário explicado. |
-| `docs/REVISAO.md` | Leitura técnica e limites da avaliação. |
-| `docs/INVENTARIO.json` | Tamanhos e hashes SHA-256 dos 12 arquivos originais. |
-| `docs/RELEASE-1.0.md` | Texto preparado para a release 1.0. |
-| `docs/PUBLICAR.md` | Orientação para colocar o pacote no GitHub. |
-| `docs/DESCRICAO.txt` | Descrição curta sugerida para o campo About. |
+| `Installer Windows.bat` / `Repair Windows.bat` | Instalação e reparação no Windows. |
+| `windows/InstallerCore.ps1` | Valida 40 registros e componentes, prepara a cópia instalada, gera o atalho na pasta do projeto e oculta auxiliares. |
+| `windows/TrunGameFreeMega.ps1` | Interface Windows Forms, busca, filtros, cópia, abertura, histórico e idiomas. |
+| `windows/Launcher.vbs` | Inicia a cópia instalada sem manter o console visível. |
+| `windows/BuildStatus.ps1` | Janelas de resultado e detalhes em Read More. |
+| `Installer Linux.sh` / `Repair Linux.sh` | Instalação e reparação Linux. |
+| `linux/Start Linux.sh` | Inicia a interface com `wish`. |
+| `linux/TrunGameFreeMega.tcl` | Interface Tcl/Tk, busca, categorias e histórico. |
+| `linux/BuildStatus.tcl` | Janela de resultado e segunda janela de detalhes. |
+| `Installer macOS.command` / `Repair macOS.command` | Compila o aplicativo SwiftUI e repete a instalação. |
+| `macos/TrunGameFreeMega.swift` | Interface SwiftUI/AppKit e DataSense no macOS. |
+| `catalog.tsv` / `catalog-original.txt` | Catálogo estruturado dos 40 links e referência original. |
+| `credits.txt` | Os 16 créditos originais. |
+| `assets/MEGA-Logo.png` / `.ico` | Nova logo principal e ícone. |
+| `assets/MEGA-Logo-2.png` / `.ico` | Variante de logo fornecida. |
+| `PREVIEW-LINUX.png` | Prévia recebida no pacote; não é uma captura produzida nesta revisão. |
+| `README-PTBR.txt` / `README-EN.txt` | Guias de instalação fornecidos. |
+| `TEST-RESULTS.txt` | Registro de verificações anterior, recebido com o pacote. |
+| `.hidden` | Lista de auxiliares para gerenciadores de arquivos Linux compatíveis. |
+| `.github/workflows/build-native.yml` | Rotina de verificações para os três sistemas no GitHub Actions. |
 
-## Arquivos criados pelo instalador
+Hashes e tamanhos individuais estão em [INVENTARIO.json](INVENTARIO.json).
 
-| Local | Conteúdo ou efeito |
-| --- | --- |
-| `%LOCALAPPDATA%\TrunGameFreeMega` | Cópias de `Launcher Links.ps1`, `Abrir Launcher.vbs` e `MEGA-Logo.ico`. |
-| `%LOCALAPPDATA%\TrunGameFreeMega\config.json` | Pasta do projeto, caminhos dos atalhos, data/hora e identificação interna `1.1`. |
-| Área de trabalho | `Trun Game Free Mega.lnk`; atualiza também um atalho antigo com nome de versão, se já existir. |
-| Pasta extraída | Gera `Trun Game Free Mega 1.0.lnk`. Oculta o Batch e o PowerShell do instalador, o PowerShell do launcher e `Abrir Launcher.vbs`. |
+## Arquivos gerados pela instalação
 
-O instalador não copia a interface principal para LocalAppData: ela continua na pasta extraída. Mantenha os 11 arquivos de origem juntos. A extração do ZIP é uma etapa manual anterior à execução do instalador.
+| Sistema | Aplicativo e inicializadores | Dados locais |
+| --- | --- | --- |
+| Windows | Aplicativo em `%LOCALAPPDATA%/TrunGameFreeMega/App`; `.lnk` na pasta extraída. | `%LOCALAPPDATA%/TrunGameFreeMega/DataSense` |
+| Linux | Aplicativo em `~/.local/share/TrunGameFreeMega/App`; `.desktop` na pasta extraída e no menu. | `~/.local/share/TrunGameFreeMega/DataSense` |
+| macOS | `.app` compilado na pasta extraída. | `~/Library/Application Support/TrunGameFreeMega/DataSense` |
+
+O histórico usa TSV no Windows/Linux e JSON no macOS. A preferência fica em `language.txt`. Os instaladores também gravam registros locais.
+
+O README principal, os créditos e os documentos desta pasta descrevem a versão 2.2. `RELEASE-1.0.md` permanece como registro histórico; as notas atuais estão em [RELEASE-2.2.md](RELEASE-2.2.md).

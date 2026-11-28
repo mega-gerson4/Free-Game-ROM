@@ -1,0 +1,20 @@
+TRUN GAME FREE MEGA 2.2 - BUILD CHECKS
+======================================
+PASS: 40 catalog records retained, names and URLs unchanged from prior package.
+PASS: 16 creator names retained, no By: prefix.
+PASS: Windows WinForms source uses independent TableLayoutPanels for sidebar,
+      header, toolbar and list, avoiding the earlier overlapping Dock layout.
+PASS: Windows installer source checks catalog, icon, and PowerShell parse errors.
+PASS: Windows self-test entrypoint loads WinForms, catalog and original logo.
+PASS: Windows installer creates shortcut INSIDE THE PROJECT FOLDER only.
+PASS: Windows BuildStatus script includes BUILD SUCCESS, BUILD FATAL ERROR,
+      Read More, and a separate details dialog (source inspection).
+PASS: Linux installer with paths containing spaces, launcher inside folder.
+PASS: Linux installer missing-file case -> BUILD FATAL ERROR, exit code 1.
+PASS: Linux Tk Read More button opens separate details window (xvfb-run).
+PASS: macOS installer shell syntax (bash -n).
+PASS: macOS installer on non-Mac -> BUILD FATAL ERROR, exit code 1.
+PASS: DataSense directory and backup path retained; installer doesn't delete history.
+NOT TESTED: Windows installer/dialog and WinForms layout on real Windows PC.
+NOT TESTED: macOS SwiftUI compile and Finder visibility on actual Mac.
+Run the included GitHub Actions workflow on a repository to verify Windows/macOS.

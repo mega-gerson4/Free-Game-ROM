@@ -1,6 +1,6 @@
-# Créditos
+# Créditos — Trun Game Free Mega 2.2
 
-Criadores listados no arquivo `Trun Game Mega Original – Free Edition 1.0.txt` e na interface `Trun-Game-Free-Mega.ps1`, preservados na ordem original:
+Os 16 nomes de `credits.txt`, preservados na ordem original:
 
 1. Ruros
 2. MEGA GERSON
@@ -19,8 +19,8 @@ Criadores listados no arquivo `Trun Game Mega Original – Free Edition 1.0.txt`
 15. Club 2017 Neus
 16. Club Mega ++
 
-O pacote não atribui funções individuais a cada nome. Esta documentação preserva os créditos declarados pelo criador do projeto.
+A nova logo do chapéu vermelho com faixa preta foi fornecida pelo criador em `MEGA-Logo.png` e já acompanha o pacote 2.2. A imagem principal tem 1254 × 1254 pixels. Os ícones e a variante `MEGA-Logo-2` também foram preservados.
 
-Logo: arquivo original `MEGA-Logo.ico` incluído no pacote. A imagem `assets/MEGA-Logo.png` é uma conversão do mesmo ícone de 32 × 32 pixels, sem redesenho.
+O pacote não atribui funções individuais aos nomes acima.
 
 Contato: [mega.gerson44888@gmail.com](mailto:mega.gerson44888@gmail.com).

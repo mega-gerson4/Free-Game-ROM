@@ -1,54 +1,26 @@
-# Revisão estática do pacote recebido
+# Revisão do pacote 2.2
 
-**Data:** 21/11/2026. **Método:** leitura dos scripts e textos, inspeção do ícone, decodificação dos campos principais do atalho e inventário do ZIP. Os scripts não foram executados.
-
-Arquivo avaliado: `Trun Game Free Mega 1.0(1).zip`.
-
-SHA-256 do arquivo original:
-
-```text
-f311dae8e157e2c1f1d5f9b3b374e6e9fcf5ff6420e8a5102de5f20be2559e49
-```
-
-Esse hash identifica o ZIP original recebido, não o novo ZIP de distribuição nem o ZIP deste repositório. Os hashes individuais estão em `INVENTARIO.json`.
+**Data:** 28/11/2026. Foram lidos scripts, catálogos, créditos, guias e a rotina de build. Nenhum instalador foi executado no computador do usuário.
 
 ## Comportamento encontrado
 
-| Área | Evidência no código | Resultado da leitura |
-| --- | --- | --- |
-| Instalação | `Installer Links.ps1`, linhas 19–34 e 49–71 | Grava arquivos em LocalAppData, registra a pasta do projeto e cria atalhos do usuário. |
-| Arquivos ocultos | `Installer Links.ps1`, linhas 74–82 | Aplica o atributo Hidden a quatro arquivos na pasta de origem. Não é exclusão dos arquivos. |
-| Abertura | Os dois VBS, o Batch principal e `Launcher Links.ps1` | Iniciam scripts locais. A ausência do console visível é intencional. |
-| Política de execução | Parâmetros dos comandos em BAT e VBS | Usa `-ExecutionPolicy Bypass` no processo iniciado; não contém `Set-ExecutionPolicy` permanente. |
-| Reparo | `Launcher Links.ps1`, linhas 111–136 | Pede ao usuário uma nova pasta e atualiza configuração e atalhos. |
-| Catálogo | `Trun-Game-Free-Mega.ps1`, linhas 67–87 | Define 19 endereços fixos em três grupos. |
-| Clique no catálogo | `Trun-Game-Free-Mega.ps1`, linhas 260–275 | Escreve o endereço escolhido na área de transferência e mostra confirmação. Não abre o navegador. |
-| C# e DLL do Windows | `Trun-Game-Free-Mega.ps1`, linhas 7–46 | O trecho C# trata Enter e usa `user32.dll` para arrastar a janela. |
-| Rede | Scripts completos | Não foram encontradas requisições de rede ou comandos de download. Os endereços aparecem como dados do catálogo. |
-| Inicialização com o Windows | Scripts completos | Não foram encontradas tarefas agendadas, serviços ou entradas de inicialização automática. |
-| Credenciais e envio de dados | Scripts completos | Não foram encontradas rotinas para coletar credenciais ou enviar dados. O instalador registra localmente caminhos e data/hora. |
+- As interfaces carregam 40 registros de `catalog.tsv` e 16 nomes de `credits.txt`.
+- COPIAR escreve a URL na área de transferência e registra a cópia localmente. ABRIR usa o navegador padrão por uma ação do usuário.
+- O instalador Windows prepara arquivos em uma pasta temporária, testa componentes e troca a cópia instalada em LocalAppData. Há rotinas de restauração da aplicação anterior em determinadas falhas.
+- O atalho Windows fica na pasta extraída e aponta para `App/windows/Launcher.vbs`. Não é criado um novo atalho na área de trabalho; um atalho antigo só é removido quando identificado como sendo do projeto.
+- Windows e macOS ocultam auxiliares conhecidos. No Linux há uma lista `.hidden`, aplicada por gerenciadores compatíveis.
+- Os instaladores preservam DataSense. Apagar o histórico é uma ação separada; Windows e Linux pedem confirmação.
+- Os inicializadores Windows usam `-ExecutionPolicy Bypass` na sessão iniciada e o VBS oculta o console. Não foi encontrada alteração permanente da política de execução.
+- O instalador macOS compila SwiftUI e tenta uma assinatura ad hoc local; isso não equivale à notarização da Apple.
+- Não foram encontradas rotinas de download automático de jogos, coleta de credenciais, envio de histórico ou inicialização automática com o sistema nos scripts da aplicação examinados.
 
-## Atalho original
+## Limites e pontos para conferir
 
-O arquivo `.lnk` original aponta para `wscript.exe`, passando como argumento um caminho absoluto para `Abrir Launcher.vbs` dentro do perfil Windows do computador de origem. O diretório de trabalho e o ícone também usam caminhos desse perfil.
+- Os sites externos não foram auditados. Nomes e URLs foram preservados; há endereços repetidos, e rótulos como Switch 1 and 2 não validam conteúdo para ambos os consoles.
+- A opção japonesa do Windows/Linux ainda contém textos em inglês.
+- A interface Linux reduz a logo por um fator fixo de dois. Com a imagem de 1254 × 1254 pixels, o enquadramento deve ser conferido em ambiente gráfico. A imagem original foi preservada.
+- O instalador macOS declara mínimo 11.0 no Info.plist. O mínimo efetivo depende das APIs e do alvo do compilador; não foi certificada compatibilidade com versões específicas do macOS.
+- O `TEST-RESULTS.txt` recebido relata testes anteriores, não uma execução nova desta atualização.
+- Não há medições para certificar todas as CPUs/GPUs ou prometer tempos por hardware e rede.
 
-Isso explica por que esse atalho pode falhar em outro computador antes da instalação. Ele foi retirado da nova cópia de distribuição. Os scripts originais, que geram o atalho correto para cada usuário, foram mantidos.
-
-## Pontos para futuras melhorias
-
-- **Identificação de versão:** a pasta e o nome do pacote indicam 1.0; o instalador e o reparador gravam 1.1 no JSON local. Convém unificar esses rótulos numa atualização de código.
-- **Validação incompleta da pasta:** as funções `Test-Project` verificam alguns arquivos principais, mas não incluem `appearance.json`. Uma pasta sem esse JSON pode passar pela validação e falhar ao abrir a interface.
-- **Diagnóstico da interface:** a inicialização sem console pode esconder erros. Um registro de erro ou uma mensagem clara ajudaria a identificar a causa.
-- **Teste de compatibilidade:** não há medições reproduzíveis por CPU, GPU, RAM ou rede no material recebido. Não foi fornecida uma matriz de computadores testados.
-- **Rótulos do catálogo:** “Nintendo Switch 1 and 2” é somente o nome de uma entrada. O destino não foi inspecionado, portanto não comprova conteúdo para os dois consoles.
-- **Manutenção de dados:** a lista original está no TXT e também no PowerShell. Alterar um deles não atualiza o outro automaticamente.
-
-Esses pontos foram documentados. O código de aplicação não foi modificado nesta preparação.
-
-## Limites da conclusão
-
-A leitura não revelou uma rotina explicitamente maliciosa nos scripts examinados. Isso não permite declarar o pacote “100% seguro”. Não houve execução em Windows, teste de antivírus, teste de todas as interações, auditoria dos sites externos ou certificação de compatibilidade.
-
-Não há base para atribuir falhas a uma GPU específica, recomendar apagar arquivos do programa ou prometer tempos por modelo de computador. Quando ocorrer um problema, o texto do erro e a etapa afetada são as evidências úteis para investigar.
-
-Segundo a [documentação do SmartScreen](https://learn.microsoft.com/en-us/windows/apps/package-and-deploy/smartscreen-reputation), assinatura e reputação do arquivo influenciam os avisos. A [documentação do Windows PowerShell](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-5.1) explica que a política definida no processo é temporária e pode ser subordinada a políticas administrativas. Essas informações não validam o programa ou seus links externos.
+Veja [VALIDACAO-2.2.md](VALIDACAO-2.2.md) para as verificações desta publicação. Inspeção de código e hashes não constituem certificação de segurança ou funcionamento em todos os sistemas.
