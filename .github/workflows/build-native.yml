@@ -1,0 +1,69 @@
+name: Validate Trun Game Free Mega native builds
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+jobs:
+  check-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install and verify project-folder shortcut
+        shell: powershell
+        env:
+          TRUN_INSTALL_NONINTERACTIVE: '1'
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $fileNames = @('windows\TrunGameFreeMega.ps1','windows\InstallerCore.ps1','windows\BuildStatus.ps1')
+          foreach ($f in $fileNames) {
+            $tokens = $null; $parseErrors = $null
+            [void][System.Management.Automation.Language.Parser]::ParseFile((Join-Path (Get-Location) $f), [ref]$tokens, [ref]$parseErrors)
+            if ($parseErrors.Count -ne 0) { throw ($parseErrors | Out-String) }
+          }
+          & powershell.exe -NoLogo -NoProfile -STA -ExecutionPolicy Bypass -File '.\windows\InstallerCore.ps1' -Mode Install
+          if ($LASTEXITCODE -ne 0) { throw 'BUILD FATAL ERROR: Installer failed' }
+          $shortcut = Join-Path (Get-Location) 'Trun Game Free Mega.lnk'
+          if (-not (Test-Path -LiteralPath $shortcut)) { throw 'BUILD FATAL ERROR: In-folder launcher missing' }
+          $wsh = New-Object -ComObject WScript.Shell
+          $lnk = $wsh.CreateShortcut($shortcut)
+          if ($lnk.Arguments -notlike '*TrunGameFreeMega*') { throw 'BUILD FATAL ERROR: Shortcut target mismatch' }
+          Write-Host 'BUILD SUCCESS: Windows preflight and launcher verified'
+  check-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Tcl/Tk and test application
+        env:
+          TRUN_INSTALL_NONINTERACTIVE: '1'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tk xvfb
+          sh 'Installer Linux.sh'
+          test -f 'Trun Game Free Mega.desktop'
+          cat > smoke.tcl <<'TCL'
+          source linux/TrunGameFreeMega.tcl
+          update
+          if {[llength $::app::entries] != 40} {error "Catalog entry count invalid"}
+          app::setGroup Sega
+          app::copy "Test" "https://www.romsgames.net/roms/sega-genesis/"
+          if {![file exists $::app::history]} {error "DataSense failed"}
+          destroy .
+          TCL
+          xvfb-run -a wish smoke.tcl
+          echo 'BUILD SUCCESS: Linux native UI verified'
+  build-macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile and package real SwiftUI application
+        env:
+          TRUN_INSTALL_NONINTERACTIVE: '1'
+        run: |
+          bash 'Installer macOS.command'
+          test -x './Trun Game Free Mega.app/Contents/MacOS/TrunGameFreeMega'
+          ditto -c -k --sequesterRsrc --keepParent './Trun Game Free Mega.app' "$RUNNER_TEMP/Trun-Game-Free-Mega-macOS.zip"
+          echo 'BUILD SUCCESS: macOS .app compiled'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Trun-Game-Free-Mega-macOS
+          path: ${{ runner.temp }}/Trun-Game-Free-Mega-macOS.zip
