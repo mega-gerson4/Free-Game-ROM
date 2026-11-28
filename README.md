@@ -12,4 +12,8 @@ Baixe o ZIP em **Assets**, extraia todos os arquivos e execute o instalador do s
 
 Arquivos do programa, novidades, instruções completas e créditos estão em **Releases**.
 
+Créditos e suporte
+
+Ruros, MEGA GERSON, Gerson Speed Minecraft, Dash X, Game Fun Mega, Night Friends, Jan Jan Boy, BunJun Fun LKJ, JJNS, No Game, Yafek JKS, Makerzin, Animazin, Club OBC, Club 2017 Neus e Club Mega ++.
+
 **Suporte:** [mega.gerson44888@gmail.com](mailto:mega.gerson44888@gmail.com).
